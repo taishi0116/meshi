@@ -15,7 +15,7 @@ module MESHI
     
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
     
-    config.assets.initialize_on_precompile = true
+    config.assets.compile = true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
