@@ -1,0 +1,606 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ body {
+     margin: 0;
+     padding-bottom: 80px;
+     text-align: center;
+     background-color: #F5F5F5;
+     position: relative;
+ }
+ 
+ footer {
+  margin-top: 60px;
+  height: 100px;
+  width: 100%;
+  border-top: solid 1px #CCCCCC;
+ }
+ 
+ footer i {
+  padding-top: 15px;
+ }
+ 
+ footer i:hover {
+  color: #1DA1F2;
+ }
+ 
+ a {
+     text-decoration: none;
+     color: #000000;
+ }
+ 
+ ol {
+  padding: 0px;
+ }
+ 
+ .twitter-icon {
+     border-radius: 50%;
+     padding: 10px;
+     display: inline-block;
+     vertical-align: top;
+ }
+
+ .header-bar {
+     background-color: #fca553;
+     width: 100%;
+     height: 80px;
+  }
+ 
+ .width-bar {
+     width: 960px;
+     margin: 0 auto;
+     text-align: right;
+ }
+ 
+ .title {
+     float: left;
+     line-height: 80px;
+ }
+
+ .title-logo {
+     vertical-align: middle;
+     border-radius: 10px;
+ }
+
+ .icon-wrap {
+     height: 80px;
+     line-height: 80px;
+ }
+
+ .icon {
+     display: inline-block;
+     border-radius: 100%;
+     vertical-align: middle;
+ }
+ 
+ .menu-bar {
+     width: 100px;
+     margin-left: auto;
+     color: #000000;
+     background-color: #f6f6f6;
+     text-align: left;
+     padding: 8px;
+     box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.4);
+ }
+ 
+ 
+ 
+ .notice {
+  background-color: #ffffff;
+  color: #000000;
+ }
+
+ 
+ .contents {
+     width: 960px;
+     margin: 0 auto;
+     margin-top: 20px;
+ }
+ 
+ .make-invite {
+     display: inline-block;
+     font-size: 30px;
+     border: solid 1px #ffffff;
+     color: #ffffff;
+     background-color: #fca553;
+     border-radius: 16px;
+     padding: 20px 60px;
+     opacity: 0.8;
+ }
+ 
+ .make-invite:hover {
+     opacity: 1;
+ }
+ 
+ nav {
+     position: fixed;
+     bottom: 0;
+     line-height: 80px;
+     height: 80px;
+     width: 100%;
+     text-align: center;
+     background-color: #E6E6E6;
+ }
+ 
+ nav ul {
+     margin: 0;
+     padding: 0;
+     
+ }
+ 
+ nav ul li {
+     list-style: none;
+     width: 160px;
+     display: inline-block;
+ }
+  
+ nav ul li a img {
+     vertical-align: middle;
+ }
+ 
+ 
+ 
+ /* messages view */
+ 
+ 
+ 
+ .twitter-button-wrapper {
+     padding: 15px 0px;
+     margin: 20px 0px;
+ }
+ 
+ .twitter-button {
+  display: inline-block;
+  font-weight: normal;
+  background-color: #1DA1F2;
+  padding: 5px 15px;
+  border-radius: 35px;
+  cursor: pointer;
+ }
+ 
+ .twitter-button p {
+  display: inline-block;
+  color: #ffffff;
+ }
+ 
+ .twitter-button i {
+  color: #ffffff;
+ }
+ 
+ .twitter-button:hover {
+     opacity: 0.7;
+ }
+ 
+ .invite_message_wrap {
+  display: block;
+  width: 478px;
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  margin: 16px auto;
+  text-align: left;
+  background-color: #ffffff;
+  border-radius: 20px;
+ }
+ 
+ .link_range {
+  display: block;
+  width: 500px;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+ }
+ 
+.invite_message {
+  display: inline-block;
+  width: 250px;
+  position: relative;
+  padding: 20px;
+  background-color: #FFDECE;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+/* 三角アイコン - 普通の吹き出し */
+.invite_message::before{
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  left: -15px;
+  top: 22px;
+  border-right: 15px solid #FFDECE;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+ .message_wrap {
+  display: block;
+  width: 478px;
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  margin: 16px auto;
+  text-align: left;
+  background-color: #ffffff;
+  border-radius: 20px;
+ }
+
+ /* 吹き出し本体 - 普通の吹き出し */
+.message {
+  display: inline-block;
+  width: 250px;
+  position: relative;
+  padding: 20px;
+  background-color: #FFDECE;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+/* 三角アイコン - 普通の吹き出し */
+.message::before{
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  left: -15px;
+  top: 22px;
+  border-right: 15px solid #FFDECE;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.message_date {
+  float: right;
+}
+
+.message_date2 {
+ float: right;
+ padding: 8px 8px 0px 0px;
+}
+
+.message-content {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.message-wrap {
+ display: block;
+ width: 500px;
+ margin: 0 auto;
+}
+
+.message-userwrap {
+ height: 95px;
+ line-height: 95px;
+}
+
+.message-userwrap p {
+   margin-block-start: 0em;
+   margin-block-end: 0em;
+   font-size: 20px;
+}
+
+.message-bar {
+ border: solid 1px #000000;
+ width: 498px;
+ margin: 0 auto;
+ background-color: #ffffff;
+ box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+}
+
+.message-bar p {
+ font-size: 20px;
+}
+
+.submit-message {
+ font-size: 20px;
+  font-weight: bold;
+  width: 200px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 15px;
+  border: solid 2px #fca553;
+  background-color: #ffffff;
+  color: #fca553;
+  outline: 0;
+  transition: 0.1s;
+  cursor: pointer;
+  margin-top: 40px;
+}
+ 
+ .submit-message:hover {
+  background-color: #fca553;
+  color: #ffffff;
+ }
+ 
+ .message-show-wrap {
+  width: 498px;
+  margin: 0 auto;
+ }
+ 
+ .message-show {
+  margin-top: 40px;
+  line-height: 100px;
+  height: 100px;
+ }
+ 
+ .message-show p {
+  vertical-align: middle;
+ }
+ 
+ .message-show-content {
+  text-align: left;
+  border: solid 1px #CCCCCC;
+  background-color: #ffffff;
+ }
+ 
+ .message-show-content p {
+  padding: 20px;
+ }
+ 
+ .none-notification {
+  margin-top: 60px;
+ }
+ 
+ 
+ /* invites view */
+
+ 
+ .invite-wrap {
+  width: 480px;
+  margin: 0 auto;
+ }
+ 
+ .invite-title {
+   font-size: 20px;
+   margin-bottom: 5px;
+   margin-top: 30px;
+   text-align: left;
+ }
+ 
+ .invite-content {
+  margin-top: 30px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  text-align: left;
+ }
+ 
+ .text-field {
+   padding: 10px;
+   font-family: inherit;
+   font-size: 20px;
+   border: solid 2px #fca553;
+   border-radius: 15px;
+   width: 480px;
+   outline: 0;
+ }
+ 
+  .text-area {
+   padding: 10px;
+   font-size: 20px;
+   font-family: inherit;
+   border: solid 2px #fca553;
+   border-radius: 20px;
+   width: 480px;
+   max-width: 480px;
+   outline: 0;
+ }
+ 
+ .submit-invite {
+  font-size: 20px;
+  font-weight: bold;
+  width: 200px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 15px;
+  border: solid 2px #fca553;
+  background-color: #ffffff;
+  color: #fca553;
+  outline: 0;
+  transition: 0.1s;
+  cursor: pointer;
+  margin: 30px;
+ }
+ 
+ .submit-invite:hover {
+  background-color: #fca553;
+  color: #ffffff;
+ }
+ 
+ .invites {
+   margin: 0px;
+   padding: 0px;
+ }
+ 
+ .invite {
+   border: solid 1px #CCCCCC;
+   width: 498px;
+   height: 250px;
+   text-align: left;
+   background-color: #ffffff;
+   margin: 30px auto 0 auto;
+   position: relative;
+ }
+ 
+ .invite a {
+  display: block;
+  width: 500px;
+  height: 250px;
+ }
+ 
+ .invite-img {
+   width: 400px;
+   height: 300px;
+   vertical-align: bottom;
+   margin-bottom: 20px;
+   padding: 30px 30px 0 30px;
+   padding-bottom: 60px;
+   background-color: #ffffff;
+   border-radius: 20px;
+   box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+ }
+ 
+ .invites-img {
+   max-width: 100%;
+   max-height: 100%;
+   widdth: 300px;
+   height: 250px;
+   max-height: 250px;
+   margin: 0px;
+   padding: 0px;
+ }
+ 
+ .invite-bar {
+ border: solid 1px #000000;
+ width: 498px;
+ margin: 0 auto;
+ background-color: #ffffff;
+ box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+}
+
+.invite-bar p {
+ font-size: 20px;
+}
+
+.invite_date {
+ float: right;
+ padding: 10px 10px 0 0;
+}
+
+.date_position {
+ position: relative;
+}
+
+.invite_date2 {
+ position: absolute;
+ top: 345px;
+ left: 620px;
+ font-weight: bold;
+ color: #ffffff;
+ background-color: #fca553;
+ padding: 5px;
+ border-radius: 20px;
+}
+
+.notification-count {
+ position: absolute;
+ top: 100px;
+ left: 340px;
+ display: inline-block;
+}
+
+.notification-count p {
+ display: inline-block;
+}
+
+
+
+
+/* created */
+
+
+.created_wrap {
+ 
+}
+
+.created_wrap {
+ width: 498px;
+ border: solid 5px #fca553;
+ background-color: #ffffff;
+ padding: 20px;
+ margin: 100px auto 0 auto;
+}
+
+.created_wrap h1 {
+ color: #fca553;
+ margin-bottom: 50px;
+}
+
+.created_wrap a {
+ text-decoration: underline;
+}
+
+.created_content {
+ text-align: left;
+}
+
+.pp {
+ color: #808080;
+}
+
+.created_user {
+  line-height: 100px;
+  height: 100px;
+  margin-top: 50px;
+ }
+
+
+/* edit */
+
+.edit-wrap {
+ width: 240px;
+ margin: 0 auto;
+}
+
+.edit-text-field {
+  padding: 10px;
+  font-family: inherit;
+  font-size: 20px;
+  border: solid 2px #fca553;
+  border-radius: 15px;
+  width: 200;
+  outline: 0;
+ }
+
+.edit-title {
+ font-size: 20px;
+ margin-bottom: 5px;
+ margin-top: 20px;
+ text-align: left;
+}
+
+ .submit-edit {
+  font-size: 20px;
+  font-weight: bold;
+  width: 200px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 15px;
+  border: solid 2px #fca553;
+  background-color: #ffffff;
+  color: #fca553;
+  outline: 0;
+  transition: 0.1s;
+  cursor: pointer;
+  margin-top: 30px;
+ }
+ 
+.submit-edit:hover {
+ background-color: #fca553;
+ color: #ffffff;
+}
+
+/* error */
+
+.alert {
+ color: rgb(199, 36, 58);
+}
+
+.alert li {
+ list-style: none;
+}

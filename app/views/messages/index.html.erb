@@ -1,0 +1,31 @@
+<% if params[:invite_id].present? %>
+<!---nilもしくは空のときfalseを返すため/uername/invites/invite_id/messagesの中身を記述する--->
+        <div class="date_position">
+            <%= image_tag("https://s3.amazonaws.com/meshi-image/#{@user.username}/#{@invite.id}.png", class: "invite-img", :alt => "投稿") %>
+            <div class="invite_date2"><%= @invite.created_at.strftime('%m/%d') %></div>
+        </div>
+    <% if @invite_messages.any? %>
+        <ol class="invite_messages">
+            <%= render :partial => "invite_message", :collection => @invite_messages %>
+        </ol>
+    <% else %>
+            <p>メッセージはありません</p>
+    <% end %>
+
+<% else %>
+
+<!---中身があるときtrueを返すため/username/messagesの中身を記述する--->
+<div class="message-bar">
+    <p>通知一覧</p>
+</div>
+    <% if @messages.any? %>
+        <ol class="messages">
+            <%= render @messages %>
+        </ol>
+    <% else %>
+        <div class="none-notification">
+            <p>通知はありません</p>
+        </div>
+    <% end %>
+
+<% end %>

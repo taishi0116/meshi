@@ -1,0 +1,11 @@
+<!-- 投稿詳細画面 -->
+
+<div class="date_position">
+    <%= image_tag("https://s3.amazonaws.com/meshi-image/#{@user.username}/#{@invite.id}.png", class: "invite-img", :alt => "投稿") %>
+    <div class="invite_date2"><%= @invite.created_at.strftime('%m/%d') %></div>
+</div>
+
+<%= link_to "//twitter.com/share", class: "twitter-button", :target=>["_blank"] do %>
+        <i class="fab fa-twitter fa-lg"></i>
+        <p>投稿をシェアする</p>
+    <% end %>

@@ -1,0 +1,12 @@
+<div class="edit-wrap">
+    <%= form_for @user do |f| %>
+    
+        <%= render 'layouts/error_messages', model: f.object %>
+
+        <div class="edit-title"><%= f.label :ニックネームの変更 %></div>
+        <div><%= f.text_field :name, size: "15", class: "edit-text-field" %></div>
+
+        <div><%= f.submit "変更を保存する", class: "submit-edit" %></div>
+
+    <% end %>
+</div>

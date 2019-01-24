@@ -1,0 +1,9 @@
+<%= link_to(user_invite_message_path(invite_id: message.toid, id: message.id), class: "link_range") do %>
+    <div class="message_wrap">
+        <%= image_tag("#{message.from_user.image.gsub("_normal","_bigger")}", class: "twitter-icon", :alt => "Twitterアイコン") %>
+            <div class="message">
+                <%= message.content %>
+            </div>
+        <div class="message_date"><%= message.created_at.strftime('%m/%d') %></div>
+    </div>
+<% end %>

@@ -1,0 +1,12 @@
+<div class="invite-bar">
+    <p>投稿一覧</p>
+</div>
+<% if @invites.any? %>
+    <ol reversed class="invites">
+        <%= render @invites %>
+    </ol>
+<% else %>
+    <div class="none-notification">
+        <p>投稿はありません</p>
+    </div>
+<% end %>

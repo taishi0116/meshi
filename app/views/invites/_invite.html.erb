@@ -1,0 +1,7 @@
+<div class="invite">
+    <%= link_to user_invite_messages_path(invite_id: invite.id) do %>
+        <%= image_tag "https://s3.amazonaws.com/meshi-image/#{@user.username}/#{invite.id}.png", class: "invites-img" %>
+        <div class="invite_date"><%= invite.created_at.strftime('%m/%d') %></div>
+        <div class="notification-count"><p>応募が<%= invite.to_messages.count %>件です</p></div>
+    <% end %>
+</div>

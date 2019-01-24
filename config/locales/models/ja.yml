@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      invite:
+      message:
+      user:
+    attributes:
+      invite:
+        id: ID
+        title: タイトル
+        content: 内容
+      message:
+        content: 内容
+      user:
+        name: ニックネーム

@@ -1,0 +1,25 @@
+<div class="invite-wrap">
+    <%= form_for([@user, @invite]) do |f| %>
+    
+        <%= render 'layouts/error_messages', model: f.object %>
+    
+        <div class="invite-title">
+            <%= f.label :title %>
+        </div>
+    
+        <div>
+            <%= f.text_field :title, placeholder: "タイトル", size: "10", class: "text-field" %>
+        </div>
+
+        <div class="invite-content">
+            <%= f.label :content %>
+        </div>
+    
+        <div>
+            <%= f.text_area :content, placeholder: "(例):2月16日の夜8時からエンジニア志望の学生さん、一緒に渋谷の焼肉に行きませんか？興味ある人メッセージ待ってます！", size: "1x7" , class: "text-area" %>
+        </div>
+        
+        <div><%= f.submit "作成する", class: "submit-invite" %></div>
+    
+    <% end %>
+</div>

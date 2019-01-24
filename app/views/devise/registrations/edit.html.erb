@@ -1,0 +1,8 @@
+<%= form_for(@user, :url => {:controller => :users, :action => :update}) do |f| %>
+
+    <div><%= f.label :username %></div>
+    <div><%= f.text_field :username %></div>
+    
+    <div><%= f.submit "変更する" %></div>
+    
+<% end %>

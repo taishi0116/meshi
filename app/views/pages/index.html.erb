@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+<h1>こんにちは、<%= current_user.username %>さん</h1>
+<p>ユーザー用ページです。</p>
+<%= image_tag(current_user.image) %>
+<% else %>
+<p>ログインしてください</p>
+<% end %>

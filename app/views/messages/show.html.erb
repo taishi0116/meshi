@@ -1,0 +1,25 @@
+
+<div class="message-show-wrap">
+    <div class="message-show">
+        <h2><%= image_tag("#{@message_user.image.gsub("_normal","_bigger")}", class: "twitter-icon", :alt => "Twitterアイコン") %><%= @message_user.name %>さんのメッセージ</h2>
+        
+    </div>
+    <div class="message_date2"><%= @message.created_at.strftime('%m/%d') %></div>
+        <div class="message-show-content">
+            <p><%= @message.content %></p>
+            
+        </div>
+        
+</div>
+<% if user_signed_in? %>
+    <div class="twitter-button-wrapper">
+    <%= link_to "https://twitter.com/#{@message_user.username}", class: "twitter-button", :target=>["_blank"] do %>
+        <i class="fab fa-twitter fa-lg"></i>
+        <p>アカウントを確認する</p>
+    <% end %>
+</div>
+<% end %>
+<div class="date_position">
+    <%= image_tag("https://s3.amazonaws.com/meshi-image/#{@user.username}/#{@invite.id}.png", class: "invite-img", :alt => "投稿") %>
+    <div class="invite_date2"><%= @invite.created_at.strftime('%m/%d') %></div>
+</div>

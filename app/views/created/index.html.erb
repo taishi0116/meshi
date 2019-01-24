@@ -1,0 +1,21 @@
+<div class="created_wrap">
+    <h1>メッセージが送信されました</h1>
+        <div class="created_content">
+            <p>あなたに興味を持った場合、投稿者からTwitterに連絡が来ます。</p>
+            <p>しかし、その為にはTwitterのダイレクトメッセージを受信可能な状態にする必要があります。</p>
+            <p>「設定とプライバシー」→「<a href="https://twitter.com/settings/safety" target="_blank">プライバシーとセキュリティ</a>」→「すべてのユーザーからダイレクトメッセージを受信する」にチェックをつけてください。</p>
+            <p class="pp">※投稿者をフォローすることが好ましいです<p>
+        </div>
+</div>
+
+<div class="created_user">
+    <%= image_tag("#{@user.image.gsub("_normal","_bigger")}", class: "twitter-icon", :alt => "Twitterアイコン") %>
+    <%= @user.name %>さん
+</div>
+
+
+
+    <%= link_to "https://twitter.com/#{@user.username}", class: "twitter-button", :target=>["_blank"] do %>
+        <i class="fab fa-twitter fa-lg"></i>
+        <p>投稿者のアカウントを確認する</p>
+    <% end %>

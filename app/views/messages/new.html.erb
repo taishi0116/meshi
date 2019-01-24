@@ -1,0 +1,21 @@
+<div class="message-wrap">    
+    <div class="message-userwrap">
+        <h2><%= image_tag("#{@user.image.gsub("_normal","_bigger")}", class: "twitter-icon", :alt => "Twitterアイコン") %><%= @user.name %>さんの投稿</h2>
+    </div>
+
+    <div>
+        <%= image_tag("https://s3.amazonaws.com/meshi-image/#{@user.username}/#{@invite.id}.png", class: "invite-img", :alt => "投稿") %>
+    </div>
+
+    <%= form_for([@user, @invite, @message]) do |f| %>
+    
+        <%= render 'layouts/error_messages', model: f.object %>
+    
+        <div class="message-content"><%= f.label :メッセージ内容 %></div>
+        <div><%= f.text_area :content, placeholder: "(例):会って色々お話してみたいです！もし良かったらDMください！", size: "1x5" , class: "text-area" %></div>
+    
+        <div><%= f.hidden_field :toid, :value => @invite.id %></div>
+        <div><%= f.submit "送信する", class: "submit-message" %></div>
+    
+    <% end %>
+</div>

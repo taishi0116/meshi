@@ -1,0 +1,5 @@
+<%= image_tag("#{current_user.image.gsub("_normal","_bigger")}", class: "twitter-icon", :alt => "Twitterアイコン") %>
+<h2><%= @user.name %>さん</h2>
+    <div>
+        <%= link_to "めしに誘う", new_user_invite_path(@user.username), class: "make-invite" %>
+    </div>

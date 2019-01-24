@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DeviseRails5</title>
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@dtb6464" />
+        <meta name=“twitter:title” content="ttttttttt">
+        <meta name=“twitter:description” content="new desc">
+        <meta property="og:url" content="https://0f5acc587bdb434f97c8e770197b6f92.vfs.cloud9.us-east-2.amazonaws.com/qpwoeirutyggg/invites/6" />
+        <meta property="og:title" content="飯行くぞ" />
+        <meta property="og:description" content="ご飯に誘っています" />
+        <meta property="og:image" content="https://s3.amazonaws.com/meshi-image/qpwoeirutyggg/6.png" />
+    </head>
+
+    <body>
+        <header>
+            <div class="header-bar">
+                <div class="width-bar">
+                
+                <% if user_signed_in? %>
+                    <div class="title"><%= link_to image_tag('/assets/logo.png', class: "title-logo"), user_path(current_user) %></div>
+
+                    <div class="icon-wrap">
+                        <img onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';" src="<%= current_user.image %>" style="cursor:pointer;" class="icon">
+                    </div>
+
+                    <div id="open" style="display:none;clear:both;" class="menu-bar">
+                        <div><%= link_to 'プロフィール', edit_user_path(current_user.username) %></div>
+                        <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></div>
+                    </div>
+
+                <% else %>
+                    <div class="title"><%= link_to image_tag('/assets/logo.png', class: "title-logo"), new_user_session_path %></div>
+                <% end %>
+                </div>
+            </div>
+        </header>
+        
+            <div class="notice">
+                <% if flash[:success] %>
+                    <%= flash[:success] %>
+                <% end %>
+            </div>
+            <div class="notice"><%= notice %></div>
+            <div class="notice"><%= alert %></div>
+        
+        <div class="contents">
+            
+
+            <%= yield %>
+            
+        </div>
+        
+        <footer>
+            <%= link_to "https://twitter.com/dtb6464", :target=>["_blank"] do %>
+                <i class="fab fa-twitter fa-2x"></i>
+            <% end %>
+            <p>COPYRIGHT &#169; Meshi ALL RIGHTS RESERVED.</p>
+        </footer>
+        
+        <% if user_signed_in? %>
+            <nav>
+                <ul>
+                    <li><%= link_to image_tag('/assets/icon-home.png', class: "icon-home"), user_path(current_user) %></li>
+                    <li><%= link_to image_tag('/assets/icon-bell.png', class: "icon-bell"), user_messages_path(current_user.username) %></li>
+                    <li><%= link_to image_tag('/assets/icon-pic.png', class: "icon-pic"), user_invites_path(current_user.username) %></li>
+                </ul>
+            </nav>
+        <% end %>
+    </body>
+</html>
