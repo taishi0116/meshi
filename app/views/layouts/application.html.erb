@@ -8,15 +8,14 @@
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
         
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
+        
+        <% twitter_card = get_twitter_card_info(@invite ? @invite : nil) %>
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="XXXX" />
-        <meta name=“twitter:title” content="XXXX">
-        <meta name=“twitter:description” content="XXXX">
-        <meta property="og:url" content="XXXX" />
-        <meta property="og:title" content="<%= @user.username %>" />
-        <meta property="og:description" content="ご飯に誘っています" />
-        <meta property="og:image" content="XXXX" />
+        <meta name="twitter:site" content=<%=twitter_card[:site]%> /> 
+        <meta property="og:url" content=<%=twitter_card[:url]%> />
+        <meta property="og:title" content=<%=twitter_card[:title]%> />
+        <meta property="og:description" content=<%=twitter_card[:description]%> />
+        <meta property="og:image" content=<%=twitter_card[:image]%> />
     </head>
 
     <body>
