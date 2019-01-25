@@ -1,5 +1,5 @@
 class InvitesController < ApplicationController
-    
+
     before_action :correct_user, only: [:new, :show, :index]
     
     
@@ -28,6 +28,7 @@ class InvitesController < ApplicationController
         @user = User.find_by(username: params[:user_username])
         @invite = Invite.find_by(id: params[:id], fromid: @user.id)
         @message = Message.new
+        invite = @invite
     end
     
     def index
