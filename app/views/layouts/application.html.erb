@@ -47,8 +47,11 @@
                     <%= flash[:success] %>
                 <% end %>
             </div>
+            
+            <% if user_signed_in? %>
             <div class="notice"><%= notice %></div>
             <div class="notice"><%= alert %></div>
+            <% end %>
         
         <div class="contents">
             
