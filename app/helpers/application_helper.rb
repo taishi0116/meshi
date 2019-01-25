@@ -10,5 +10,6 @@ module ApplicationHelper
             twitter_card[:description] = 'Twitterで気軽にご飯に誘えるアプリです'
             twitter_card[:image] = 'X'
         end
+        twitter_card
     end 
 end
