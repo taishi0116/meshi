@@ -132,8 +132,6 @@ class InvitesController < ApplicationController
     end
     
     def meta_data_twitter
-        @user = User.find_by(username: params[:user_username])
-        @invite = Invite.find_by(id: params[:id], fromid: @user.id)
         twitter_card[:url] = 'https://meshi-go.herokuapp.com/#{@invite.user.username}/invites/#{@invite.id}/messages/new'
         twitter_card[:title] = '#{@invite.user.username}の投稿'
         twitter_card[:description] = '#{@invite.content}'
