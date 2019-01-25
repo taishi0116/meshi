@@ -1,6 +1,9 @@
 class InvitesController < ApplicationController
 
     before_action :correct_user, only: [:new, :show, :index]
+    after_action  :meta_data_twitter, only: [:show]
+    
+    helper_method :meta_data_twitter
     
     
     def new
@@ -28,7 +31,6 @@ class InvitesController < ApplicationController
         @user = User.find_by(username: params[:user_username])
         @invite = Invite.find_by(id: params[:id], fromid: @user.id)
         @message = Message.new
-        invite = @invite
     end
     
     def index
@@ -127,5 +129,14 @@ class InvitesController < ApplicationController
     def correct_user
       @user = User.find_by(username: params[:user_username])
       redirect_to(root_url) unless @user == current_user
+    end
+    
+    def meta_data_twitter
+        @user = User.find_by(username: params[:user_username])
+        @invite = Invite.find_by(id: params[:id], fromid: @user.id)
+        twitter_card[:url] = 'https://meshi-go.herokuapp.com/#{@invite.user.username}/invites/#{@invite.id}/messages/new'
+        twitter_card[:title] = '#{@invite.user.username}の投稿'
+        twitter_card[:description] = '#{@invite.content}'
+        twitter_card[:image] = 'https://s3.amazonaws.com/meshi-image/#{@invite.user.username}/#{@invite.id}.png'
     end
 end
