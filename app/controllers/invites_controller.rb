@@ -1,6 +1,6 @@
 class InvitesController < ApplicationController
 
-    before_action :correct_user, only: [:new, :index]
+    before_action :correct_user, only: [:new, :show, :index]
     
     helper_method :meta_data_twitter
     
