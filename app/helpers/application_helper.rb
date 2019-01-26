@@ -6,7 +6,7 @@ module ApplicationHelper
       twitter_card[:url] = "https://meshi-go.herokuapp.com/#{invite.user.username}/invites/#{invite.id}/messages/new"
       twitter_card[:title] = "#{invite.title}・@#{invite.user.username}の投稿"
       twitter_card[:description] = "#{invite.content}"
-      twitter_card[:image] = "https://meshi-go.herokuapp.com/#{invite.user.username}/invites/#{invite.id}/messages/new"
+      twitter_card[:image] = "https://s3.amazonaws.com/meshi-image/#{invite.user.username}/#{invite.id}.png"
     else
       twitter_card[:url] = "https://meshi-go.herokuapp.com"
       twitter_card[:title] = 'Meshi'
