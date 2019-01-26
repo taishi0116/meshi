@@ -9,7 +9,7 @@
         
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
         
-        <% twitter_card = meta_tag_twitter() %>
+        <% twitter_card = get_twitter_card_info(@invite ? @invite : nil) %>
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content='@dtb6464' /> 
         <meta property="og:url" content=<%=twitter_card[:url]%> />
