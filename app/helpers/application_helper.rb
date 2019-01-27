@@ -11,7 +11,7 @@ module ApplicationHelper
       twitter_card[:url] = "https://meshi-go.herokuapp.com/"
       twitter_card[:title] = 'Meshi'
       twitter_card[:description] = 'Twitterで気軽にご飯に誘えるサービスです'
-      twitter_card[:image] = 'assets/Meshi.png'
+      twitter_card[:image] = '/assets/Meshi.png'
     end
       twitter_card
     end 
