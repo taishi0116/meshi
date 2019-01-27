@@ -1,8 +1,60 @@
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to omniauth_authorize_path(resource_name, provider), class: "twitter-button" do %>
-        <i class="fab fa-twitter fa-lg"></i>
-        <p><%= OmniAuth::Utils.camelize(provider) %>でログイン</p>
-      <% end %>
+<div class="homepage">
+  
+  <h1>MeshiはTwitterで気軽にご飯に誘えるアプリです<br>気軽にご飯に誘ってみましょう！</h1>
+
+  <%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= link_to omniauth_authorize_path(resource_name, provider), class: "twitter-button" do %>
+          <i class="fab fa-twitter fa-lg"></i>
+          <p><%= OmniAuth::Utils.camelize(provider) %>でログイン</p>
+        <% end %>
+    <% end -%>
   <% end -%>
-<% end -%>
+  
+  <p>2秒で簡単ログイン！</p>
+  
+  <div class="description">
+    <h3>1. 文章を入力して簡単に画像を作成 & 投稿！</h3>
+    <h3>2. あなたの投稿に興味を持った人からメッセージが届きます！</h3>
+    <h3>3. あなたが気になる人とダイレクトメッセージでやり取り！</h3>
+  </div>
+  
+</div>
+  
+  <div class="description-image">
+    
+    <h1>投稿の手順</h1>
+    
+    <ul>
+      
+      <h2>1. 入力</h2>
+      
+      <li><img src="/assets/sample1.png"></li>
+      <div><img src="/assets/yajirushi.png"></div>
+      
+      <h2>2. 作成</h2>
+      
+      <li><img src="/assets/sample2.png"></li>
+      <div><img src="/assets/yajirushi.png"></div>
+      
+      <h2>3. 投稿</h2>
+      
+      <li><img src="/assets/sample3.jpg"></li>
+      
+      <h2>4. 完了！</h2>
+    </ul>
+  </div>
+    
+  <div class="second-button">
+    <h1>簡単ログインでMeshiを始める！</h1>
+    
+    <%- if devise_mapping.omniauthable? %>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <%= link_to omniauth_authorize_path(resource_name, provider), class: "twitter-button" do %>
+          <i class="fab fa-twitter fa-lg"></i>
+          <p><%= OmniAuth::Utils.camelize(provider) %>でログイン</p>
+        <% end %>
+      <% end -%>
+    <% end -%>
+  </div>
+  

@@ -4,6 +4,12 @@
             <%= image_tag("https://s3.amazonaws.com/meshi-image/#{@user.username}/#{@invite.id}.png", class: "invite-img", :alt => "投稿") %>
             <div class="invite_date2"><%= @invite.created_at.strftime('%m/%d') %></div>
         </div>
+        
+        <%= link_to "https://twitter.com/share?url=https%3A%2F%2Fmeshi-go.herokuapp.com%2F#{@user.username}%2Finvites%2F#{@invite.id}%2Fmessages%2Fnew&hashtags=meshi", class: "twitter-button", :target=>["_blank"] do %>
+            <i class="fab fa-twitter fa-lg"></i>
+            <p>Twitterに投稿する</p>
+        <% end %>
+        
     <% if @invite_messages.any? %>
         <ol class="invite_messages">
             <%= render :partial => "invite_message", :collection => @invite_messages %>

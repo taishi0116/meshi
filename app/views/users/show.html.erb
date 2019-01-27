@@ -1,5 +1,18 @@
-<%= image_tag("#{current_user.image.gsub("_normal","_bigger")}", class: "twitter-icon", :alt => "Twitterアイコン") %>
-<h2><%= @user.name %>さん</h2>
-    <div>
-        <%= link_to "めしに誘う", new_user_invite_path(@user.username), class: "make-invite" %>
+<div class="user-show">
+    
+    <div class="profile">
+        <div class="image-name">
+            <%= image_tag("#{current_user.image.gsub("_normal","_bigger")}", class: "twitter-icon", :alt => "Twitterアイコン") %>
+            <h2><%= current_user.name %>さん</h2>
+        </div>
+        
+        <div>
+            <p>新しい通知: <%= @count_message %>件　　投稿: <%= current_user.invites.count %>件</p>
+        </div>
     </div>
+    
+    <h3>Twitterでご飯に誘ってみましょう</h3>
+        <div>
+            <%= link_to "作成する", new_user_invite_path(@user.username), class: "make-invite" %>
+        </div>
+</div>

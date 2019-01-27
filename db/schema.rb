@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_01_22_050123) do
     t.integer "fromid"
     t.integer "toid"
     t.text "content"
+    t.boolean "boolean", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

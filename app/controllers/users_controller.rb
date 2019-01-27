@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find_by(username: params[:username])
+    @count_message = current_user.to_messages.where(boolean: false).count
   end
 
   def index

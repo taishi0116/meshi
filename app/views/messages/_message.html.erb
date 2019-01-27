@@ -5,5 +5,10 @@
                 <%= message.content %>
             </div>
         <div class="message_date"><%= message.created_at.strftime('%m/%d') %></div>
+        
+        <% if message.boolean == false %>
+            <div class="notify-icon">NEW</div>
+        <% end %>
+        
     </div>
 <% end %>
