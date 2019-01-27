@@ -5,7 +5,7 @@ ja:
       send_instructions: "アカウントの確認方法を数分以内にメールでご連絡します。"
       send_paranoid_instructions: "ご登録のメールアドレスが保存されている場合、アカウントの確認方法をメールでご連絡します。"
     failure:
-      already_authenticated: "既にログインしています。"
+      already_authenticated: "ログインしました。"
       inactive: "Your account is not activated yet."
       invalid: "Invalid email or password."
       locked: "アカウントがロックされています。"
