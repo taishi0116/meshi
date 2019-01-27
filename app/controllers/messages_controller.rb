@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
         @user = User.find_by(username: params[:user_username])
         @invite = Invite.find_by(id: params[:invite_id], fromid: @user.id)
         @message = Message.find_by(id: params[:id], toid: params[:invite_id])
-        @message.boolean = true
+        @message.boolean = 'true'
         @message.save
         @message_user = User.find(@message.fromid)
     end
