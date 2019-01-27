@@ -1,4 +1,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController  
+  
+  
+  
   def twitter
     callback_from :twitter
   end
@@ -12,14 +15,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.persisted?
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
-      sign_in_and_redirect @user, event: :authentication
+      sign_in @user, event: :authentication
+      redirect_to request.env['omniauth.origin']
     else
       session["devise.#{provider}_data"] = request.env['omniauth.auth']
-      redirect_to new_user_registration_url
+      redirect_to new_user_session_url
     end
-  end
-  
-  def after_sign_in_path_for(resource)
-    user_path(@user.username)
   end
 end
